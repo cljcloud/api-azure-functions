@@ -9,7 +9,7 @@
 (defn utc-now []
   (js/Date.))
 
-(defhttp products
+(defhttp get-utc-now
          :route "api/utc-now"
          :handler (fn [ctx req res]
                     (go

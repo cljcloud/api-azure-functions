@@ -38,14 +38,15 @@
    :headers {"Content-Type"                "application/json"
              "Access-Control-Allow-Origin" "*"}})
 
-(defn override-console-log!
-  "Sets console.log to context.log.
-  To enable debugging in Azure Function.
-  Needs to be invoked inside function body.
-  After all print-ln output will be redirected to Azure Host Logger."
-  [ctx]
-  (set! (.-log js/console) (.-log ctx))
-  (nodejs/enable-util-print!))
+#?(:cljs
+   (defn override-console-log!
+     "Sets console.log to context.log.
+     To enable debugging in Azure Function.
+     Needs to be invoked inside function body.
+     After all print-ln output will be redirected to Azure Host Logger."
+     [ctx]
+     (set! (.-log js/console) (.-log ctx))
+     (nodejs/enable-util-print!)))
 
 (defmacro defhttp
   "Define new Azure Function with http trigger."

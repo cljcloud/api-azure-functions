@@ -24,7 +24,7 @@
                 :builds {:azure {:target      :azure-app
                                  ;; the order of fn definition is always abc
                                  ;; important to have wildcard routes defined last
-                                 :fn-map      {:products api-azure-functions.api/products}
+                                 :fn-map      {:utc-now api-azure-functions.api/get-utc-now}
                                  :app-dir     "target/azure"
                                  :build-hooks [(api-azure-functions.cljcloud.azure/build-hook)]
                                  :js-options  {:js-provider          :shadow
