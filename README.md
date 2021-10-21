@@ -8,6 +8,10 @@ Install Azure Functions Core Tools
 
     $ npm i -g azure-functions-core-tools@3 --unsafe-perm true
 
+Create local profiles.clj to store secrets
+
+    $ cp example.profiles.clj profiles.clj
+
 Start app in dev mode:
 
     $ lein watch
