@@ -35,7 +35,9 @@
                                  :autorun   true}}}
 
   :npm-deps []
-  :npm-dev-deps []
+  :npm-dev-deps [[xmlhttprequest "1.8.0"]
+                 [ws "7.5.0"]
+                 [source-map-support "0.5.19"]]
 
   :shell {:dir "target/azure"}
 
